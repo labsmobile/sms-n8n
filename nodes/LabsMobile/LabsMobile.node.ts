@@ -85,7 +85,7 @@ export class LabsMobile implements INodeType {
 					show: {
 						operation: ['scheduled'],
 						resource: ['sms'],
-					}
+					},
 				},
 			},
 

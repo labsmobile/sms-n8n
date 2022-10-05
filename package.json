@@ -28,7 +28,7 @@
     "dist"
   ],
   "n8n": {
-    "n8nNodesApiVersion": 1,
+    "n8nNodesApiVersion": 1.5,
     "credentials": [
       "dist/credentials/LabsMobileApi.credentials.js"
     ],

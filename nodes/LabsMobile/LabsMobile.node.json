@@ -1,7 +1,7 @@
 {
-	"node": "n8n-nodes-base.labsMmbile",
-	"nodeVersion": "1.0",
-	"codexVersion": "1.0",
+	"node": "n8n-nodes-base.labsMobile",
+	"nodeVersion": "1.5",
+	"codexVersion": "1.5",
 	"categories": ["Development", "Developer Tools"],
 	"resources": {
 		"credentialDocumentation": [
