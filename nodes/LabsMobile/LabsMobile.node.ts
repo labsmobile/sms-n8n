@@ -10,7 +10,7 @@ export class LabsMobile implements INodeType {
 		name: 'LabsMobile',
 		icon: 'file:LabsMobile.svg',
 		group: ['transform'],
-		version: 1,
+		version: 2,
 		description: 'SMS sending and balance inquiry LabsMobile API',
 		defaults: {
 			name: 'LabsMobile',
@@ -24,8 +24,6 @@ export class LabsMobile implements INodeType {
 			},
 		],
 		properties: [
-			// Node properties which the user gets displayed and
-			// can change on the node.
 			{
 				displayName: 'Resource',
 				name: 'resource',
