@@ -14,7 +14,6 @@ export class LabsMobile implements INodeType {
 		description: 'SMS sending and balance inquiry LabsMobile API',
 		defaults: {
 			name: 'LabsMobile',
-			//color: '#3ec4c7',
 		},
 		inputs: ['main'],
 		outputs: ['main'],

@@ -25,5 +25,4 @@ export class LabsMobileApi implements ICredentialType {
 			default: '',
 		},
 	];
-
 }
