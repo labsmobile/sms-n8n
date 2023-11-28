@@ -1,47 +1,49 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+<p align="center">
+  <img src="https://avatars.githubusercontent.com/u/152215067?s=200&v=4" height="80">
+</p>
 
-# n8n-nodes-starter
+# LabsMobile-n8n
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](n8n.io). It includes the node linter and other dependencies.
+![](https://img.shields.io/badge/version-1.0.1-blue.svg)
+ 
+Send SMS messages through the LabsMobile node within the n8n platform. Download the n8n Desktop App, use n8n Cloud or Self-Hosted to use the n8n SMS sending node.
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+## Documentation
 
-## Prerequisites
+Labsmobile API documentation can be found[here][apidocs].
 
-You need the following installed on your development machine:
+## Features
+  - Basic SMS sending.
+  - Scheduled SMS sending.
+  - Balance request.
 
-* [git](https://git-scm.com/downloads)
-* Node.js and npm. Minimum version Node 16. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-	```
-	npm install n8n -g
-	```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+## Requirements
+
+- Create an account on the n8n platform or install one of its versions. More information at [n8n.io][n8n].
+- A user account with LabsMobile. Click on the link to create an account [here][signUp].
 
 
-## Using this starter
+## Installation
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+To install the LabMobile node you must follow these steps:
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-    ```
-    git clone https://github.com/<your organization>/<your-repo-name>.git
-    ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+1. Login to your n8n installation.
 
-## More information
+2. Go to the settings option.
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+3. Go to the Community nodes option.
 
-## License
+4. Click on Install community nodes.
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+5. Indicate the node name n8n-nodes-labsmobile.
+
+6. Click on install.
+
+## Help
+
+If you have questions, you can contact us through the support chat or through the support email support@labsmobile.com.
+
+[apidocs]: https://apidocs.labsmobile.com/
+[signUp]: https://www.labsmobile.com/en/signup
+[sdk]: https://www.labsmobile.com/data/labs-mobile-android-sdk.zip
+[n8n]: https://n8n.io/
