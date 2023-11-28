@@ -4,13 +4,13 @@
 
 # LabsMobile-n8n
 
-![](https://img.shields.io/badge/version-1.0.1-blue.svg)
+![](https://img.shields.io/badge/version-1.0.0-blue.svg)
  
 Send SMS messages through the LabsMobile node within the n8n platform. Download the n8n Desktop App, use n8n Cloud or Self-Hosted to use the n8n SMS sending node.
 
 ## Documentation
 
-Labsmobile API documentation can be found[here][apidocs].
+Labsmobile API documentation can be found [here][apidocs].
 
 ## Features
   - Basic SMS sending.
