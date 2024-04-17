@@ -170,7 +170,7 @@ export class LabsMobile implements INodeType {
 						uri: `https://api.labsmobile.com/json/send`,
 						headers: {
 							'Content-Type': 'application/json',
-							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.password}`).toString('base64'),
+							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.token}`).toString('base64'),
 							'Cache-Control': 'no-cache',
 						},
 						body: data,
@@ -207,7 +207,7 @@ export class LabsMobile implements INodeType {
 						uri: `https://api.labsmobile.com/json/send`,
 						headers: {
 							'Content-Type': 'application/json',
-							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.password}`).toString('base64'),
+							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.token}`).toString('base64'),
 							'Cache-Control': 'no-cache',
 						},
 						body: data,
@@ -227,7 +227,7 @@ export class LabsMobile implements INodeType {
 						uri: `https://api.labsmobile.com/json/balance`,
 						headers: {
 							'Content-Type': 'application/json',
-							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.password}`).toString('base64'),
+							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.token}`).toString('base64'),
 							'Cache-Control': 'no-cache',
 						},
 						body: data,
