@@ -99,7 +99,7 @@ export class LabsMobile implements INodeType {
 						resource: ['sms'],
 					},
 				},
-				description: 'Sender of the message.',
+				description: 'Sender of the message',
 			},
 
 			{
