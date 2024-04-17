@@ -87,6 +87,22 @@ export class LabsMobile implements INodeType {
 			},
 
 			{
+				displayName: 'Sender',
+				name: 'sender',
+				type: 'string',
+				default: 'LABSMOBILE',
+				placeholder: 'Sender',
+				required: true,
+				displayOptions: {
+					show: {
+						operation: ['send','scheduled'],
+						resource: ['sms'],
+					},
+				},
+				description: 'Sender of the message.',
+			},
+
+			{
 				displayName: 'To',
 				name: 'to',
 				type: 'string',
@@ -137,10 +153,11 @@ export class LabsMobile implements INodeType {
 				if (operation === 'send') {
 					const to = this.getNodeParameter('to', i) as string;
 					const message = this.getNodeParameter('message', i) as string;
+					const sender = this.getNodeParameter('sender', i) as string;
 
 					const data: IDataObject = {
 						"message": `${message}`,
-							"tpoa": "Sender",
+							"tpoa": `${sender}`,
 								"recipient": [
 									{
 										"msisdn": `${to}`,
@@ -167,6 +184,7 @@ export class LabsMobile implements INodeType {
 					const date = this.getNodeParameter('date', i) as string;
 					const to = this.getNodeParameter('to', i) as string;
 					const message = this.getNodeParameter('message', i) as string;
+					const sender = this.getNodeParameter('sender', i) as string;
 
 					const dateCanedaF = date.slice(0,-14);
 					const dateCadenaH = date.slice(11,-5);
@@ -175,7 +193,7 @@ export class LabsMobile implements INodeType {
 
 					const data: IDataObject = {
 						"message": `${message}`,
-							"tpoa": "Sender",
+							"tpoa": `${sender}`,
 								"recipient": [
 									{
 										"msisdn": `${to}`,
