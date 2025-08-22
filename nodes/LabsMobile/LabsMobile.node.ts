@@ -1,8 +1,8 @@
-import { IExecuteFunctions } from 'n8n-core';
+// import { IExecuteFunctions } from 'n8n-core';
 
-import { IDataObject, INodeExecutionData, INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { IDataObject, INodeExecutionData, INodeType, INodeTypeDescription, IExecuteFunctions, NodeConnectionType, IRequestOptions } from 'n8n-workflow';
 
-import { OptionsWithUri } from 'request';
+// import { OptionsWithUri } from 'request';
 
 export class LabsMobile implements INodeType {
 	description: INodeTypeDescription = {
@@ -15,8 +15,8 @@ export class LabsMobile implements INodeType {
 		defaults: {
 			name: 'LabsMobile',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [ NodeConnectionType.Main ],
+		outputs: [ NodeConnectionType.Main ],
 		credentials: [
 			{
 				name: 'labsMobileApi',
@@ -165,7 +165,7 @@ export class LabsMobile implements INodeType {
 							 ],
 					};
 					Object.assign(data);
-					const options: OptionsWithUri = {
+					const options: IRequestOptions = {
 						method: 'POST',
 						uri: `https://api.labsmobile.com/json/send`,
 						headers: {
@@ -202,7 +202,7 @@ export class LabsMobile implements INodeType {
 							"scheduled":`${dateCadenaResult}`,
 					};
 					Object.assign(data);
-					const options: OptionsWithUri = {
+					const options: IRequestOptions = {
 						method: 'POST',
 						uri: `https://api.labsmobile.com/json/send`,
 						headers: {
@@ -222,7 +222,7 @@ export class LabsMobile implements INodeType {
 
 					};
 					Object.assign(data);
-					const options: OptionsWithUri = {
+					const options: IRequestOptions = {
 						method: 'GET',
 						uri: `https://api.labsmobile.com/json/balance`,
 						headers: {
