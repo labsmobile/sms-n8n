@@ -1,8 +1,13 @@
-// import { IExecuteFunctions } from 'n8n-core';
+import {
+	IDataObject,
+	INodeExecutionData,
+	IExecuteFunctions,
+	INodeType,
+	INodeTypeDescription,
+	IRequestOptions,
+	NodeConnectionType
+} from 'n8n-workflow';
 
-import { IDataObject, INodeExecutionData, INodeType, INodeTypeDescription, IExecuteFunctions, NodeConnectionType, IRequestOptions } from 'n8n-workflow';
-
-// import { OptionsWithUri } from 'request';
 
 export class LabsMobile implements INodeType {
 	description: INodeTypeDescription = {
