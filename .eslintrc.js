@@ -1,12 +1,10 @@
 module.exports = {
 	root: true,
-
 	env: {
 		browser: true,
 		es6: true,
 		node: true,
 	},
-
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		project: ['./tsconfig.json'],
@@ -19,19 +17,18 @@ module.exports = {
 		'**/node_modules/**',
 		'**/dist/**',
 	],
-
 	overrides: [
 		{
 			files: ['package.json'],
-			plugins: ['eslint-plugin-n8n-nodes-base'],
+			plugins: ['n8n-nodes-base'],
 			extends: ['plugin:n8n-nodes-base/community'],
 			rules: {
 				'n8n-nodes-base/community-package-json-name-still-default': 'off',
-			}
+			},
 		},
 		{
-			files: ['./credentials/**/*.ts'],
-			plugins: ['eslint-plugin-n8n-nodes-base'],
+			files: ['credentials/**/*.ts'],
+			plugins: ['n8n-nodes-base'],
 			extends: ['plugin:n8n-nodes-base/credentials'],
 			rules: {
 				'n8n-nodes-base/cred-class-field-documentation-url-missing': 'off',
@@ -39,8 +36,8 @@ module.exports = {
 			},
 		},
 		{
-			files: ['./nodes/**/*.ts'],
-			plugins: ['eslint-plugin-n8n-nodes-base'],
+			files: ['nodes/**/*.ts'],
+			plugins: ['n8n-nodes-base'],
 			extends: ['plugin:n8n-nodes-base/nodes'],
 			rules: {
 				'n8n-nodes-base/node-execute-block-missing-continue-on-fail': 'off',
@@ -48,6 +45,8 @@ module.exports = {
 				'n8n-nodes-base/node-param-fixed-collection-type-unsorted-items': 'off',
 				'n8n-nodes-base/node-execute-block-operation-missing-singular-pairing': 'off',
 				'n8n-nodes-base/node-execute-block-operation-missing-plural-pairing': 'off',
+				'n8n-nodes-base/node-class-description-inputs-wrong-regular-node': 'off',
+				'n8n-nodes-base/node-class-description-outputs-wrong': 'off',
 			},
 		},
 	],

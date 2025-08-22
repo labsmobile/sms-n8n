@@ -1,7 +1,7 @@
 import {
 	IDataObject,
-	INodeExecutionData,
 	IExecuteFunctions,
+	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
 	IRequestOptions,
@@ -12,7 +12,7 @@ import {
 export class LabsMobile implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'LabsMobile',
-		name: 'LabsMobile',
+		name: 'labsMobile',
 		icon: 'file:LabsMobile.svg',
 		group: ['transform'],
 		version: 2,
