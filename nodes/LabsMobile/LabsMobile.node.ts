@@ -1,13 +1,18 @@
-import { IExecuteFunctions } from 'n8n-core';
+import {
+	IDataObject,
+	IExecuteFunctions,
+	INodeExecutionData,
+	INodeType,
+	INodeTypeDescription,
+	IRequestOptions,
+	NodeConnectionType
+} from 'n8n-workflow';
 
-import { IDataObject, INodeExecutionData, INodeType, INodeTypeDescription } from 'n8n-workflow';
-
-import { OptionsWithUri } from 'request';
 
 export class LabsMobile implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'LabsMobile',
-		name: 'LabsMobile',
+		name: 'labsMobile',
 		icon: 'file:LabsMobile.svg',
 		group: ['transform'],
 		version: 2,
@@ -15,8 +20,8 @@ export class LabsMobile implements INodeType {
 		defaults: {
 			name: 'LabsMobile',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [ NodeConnectionType.Main ],
+		outputs: [ NodeConnectionType.Main ],
 		credentials: [
 			{
 				name: 'labsMobileApi',
@@ -87,6 +92,22 @@ export class LabsMobile implements INodeType {
 			},
 
 			{
+				displayName: 'Sender',
+				name: 'sender',
+				type: 'string',
+				default: 'LABSMOBILE',
+				placeholder: 'Sender',
+				required: true,
+				displayOptions: {
+					show: {
+						operation: ['send','scheduled'],
+						resource: ['sms'],
+					},
+				},
+				description: 'Sender of the message',
+			},
+
+			{
 				displayName: 'To',
 				name: 'to',
 				type: 'string',
@@ -137,10 +158,11 @@ export class LabsMobile implements INodeType {
 				if (operation === 'send') {
 					const to = this.getNodeParameter('to', i) as string;
 					const message = this.getNodeParameter('message', i) as string;
+					const sender = this.getNodeParameter('sender', i) as string;
 
 					const data: IDataObject = {
 						"message": `${message}`,
-							"tpoa": "Sender",
+							"tpoa": `${sender}`,
 								"recipient": [
 									{
 										"msisdn": `${to}`,
@@ -148,12 +170,12 @@ export class LabsMobile implements INodeType {
 							 ],
 					};
 					Object.assign(data);
-					const options: OptionsWithUri = {
+					const options: IRequestOptions = {
 						method: 'POST',
 						uri: `https://api.labsmobile.com/json/send`,
 						headers: {
 							'Content-Type': 'application/json',
-							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.password}`).toString('base64'),
+							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.token}`).toString('base64'),
 							'Cache-Control': 'no-cache',
 						},
 						body: data,
@@ -167,6 +189,7 @@ export class LabsMobile implements INodeType {
 					const date = this.getNodeParameter('date', i) as string;
 					const to = this.getNodeParameter('to', i) as string;
 					const message = this.getNodeParameter('message', i) as string;
+					const sender = this.getNodeParameter('sender', i) as string;
 
 					const dateCanedaF = date.slice(0,-14);
 					const dateCadenaH = date.slice(11,-5);
@@ -175,7 +198,7 @@ export class LabsMobile implements INodeType {
 
 					const data: IDataObject = {
 						"message": `${message}`,
-							"tpoa": "Sender",
+							"tpoa": `${sender}`,
 								"recipient": [
 									{
 										"msisdn": `${to}`,
@@ -184,12 +207,12 @@ export class LabsMobile implements INodeType {
 							"scheduled":`${dateCadenaResult}`,
 					};
 					Object.assign(data);
-					const options: OptionsWithUri = {
+					const options: IRequestOptions = {
 						method: 'POST',
 						uri: `https://api.labsmobile.com/json/send`,
 						headers: {
 							'Content-Type': 'application/json',
-							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.password}`).toString('base64'),
+							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.token}`).toString('base64'),
 							'Cache-Control': 'no-cache',
 						},
 						body: data,
@@ -204,12 +227,12 @@ export class LabsMobile implements INodeType {
 
 					};
 					Object.assign(data);
-					const options: OptionsWithUri = {
+					const options: IRequestOptions = {
 						method: 'GET',
 						uri: `https://api.labsmobile.com/json/balance`,
 						headers: {
 							'Content-Type': 'application/json',
-							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.password}`).toString('base64'),
+							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.token}`).toString('base64'),
 							'Cache-Control': 'no-cache',
 						},
 						body: data,

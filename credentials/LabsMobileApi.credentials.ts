@@ -16,8 +16,8 @@ export class LabsMobileApi implements ICredentialType {
 			default: '',
 		},
 		{
-			displayName: 'Password or Token',
-			name: 'password',
+			displayName: 'Token API',
+			name: 'token',
 			type: 'string',
 			typeOptions: {
 				password: true,
