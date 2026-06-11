@@ -11,7 +11,7 @@ import {
 export class LabsMobile implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'LabsMobile',
-		name: 'labsMobile',
+		name: 'LabsMobile',
 		icon: 'file:LabsMobile.svg',
 		group: ['transform'],
 		version: 2,
