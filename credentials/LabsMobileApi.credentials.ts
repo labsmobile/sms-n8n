@@ -6,7 +6,7 @@ import {
 export class LabsMobileApi implements ICredentialType {
 	name = 'labsMobileApi';
 	displayName = 'LabsMobile API';
-	documentationUrl = 'https://apidocs.labsmobile.com/';
+	documentationUrl = 'https://www.labsmobile.com/en/sms-api/api-versions/http-rest-post-json';
 	genericAuth = true;
 	properties: INodeProperties[] = [
 		{

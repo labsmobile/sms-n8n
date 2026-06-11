@@ -4,8 +4,7 @@ import {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-	IRequestOptions,
-	NodeConnectionType
+	IRequestOptions
 } from 'n8n-workflow';
 
 
@@ -20,8 +19,8 @@ export class LabsMobile implements INodeType {
 		defaults: {
 			name: 'LabsMobile',
 		},
-		inputs: [ NodeConnectionType.Main ],
-		outputs: [ NodeConnectionType.Main ],
+		inputs: [ 'main'],
+		outputs: [ 'main' ],
 		credentials: [
 			{
 				name: 'labsMobileApi',
