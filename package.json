@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-labsmobile",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Envio de sms desde Api LabsMobile",
   "keywords": [
     "n8n-community-node-package"
