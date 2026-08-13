@@ -9,11 +9,11 @@
   "homepage": "",
   "author": {
     "name": "Oscar Santa",
-    "email": "oscar.docu@gmail.com"
+    "email": "oscar.santa@labsmobile.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/oscar-del/n8n_node_LabsMobile.git"
+    "url": "https://github.com/labsmobile/sms-n8n.git"
   },
   "main": "index.js",
   "scripts": {
