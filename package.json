@@ -43,7 +43,7 @@
     "@types/node": "^18.19.123",
     "@types/request-promise-native": "~1.0.15",
     "@types/ssh2": "^1.15.5",
-    "@typescript-eslint/parser": "~8.32.0",
+    "@typescript-eslint/parser": "^8.61.0",
     "eslint": "^8.57.1",
     "eslint-plugin-n8n-nodes-base": "^1.16.3",
     "gulp": "^5.0.1",
