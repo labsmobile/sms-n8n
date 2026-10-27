@@ -1,19 +1,19 @@
 {
   "name": "n8n-nodes-labsmobile",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Envio de sms desde Api LabsMobile",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/labsmobile/sms-n8n",
   "author": {
     "name": "Oscar Santa",
     "email": "oscar.santa@labsmobile.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/labsmobile/sms-n8n.git"
+    "url": "git+https://github.com/labsmobile/sms-n8n.git"
   },
   "main": "index.js",
   "scripts": {
@@ -59,8 +59,8 @@
     "lodash": "^4.18.1",
     "qs": "^6.15.2",
     "uuid": "^11.1.1",
-    "js-yaml": "^4.3.0",
-    "brace-expansion": "^5.0.7",
+    "js-yaml": "^4.3.2",
+    "brace-expansion": "^5.0.10",
     "diff": ">=4.0.4",
     "@eslint/eslintrc": {
       "ajv": "^6.14.0"

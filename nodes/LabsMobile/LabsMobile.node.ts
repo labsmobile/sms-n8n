@@ -19,8 +19,8 @@ export class LabsMobile implements INodeType {
 		defaults: {
 			name: 'LabsMobile',
 		},
-		inputs: [ 'main'],
-		outputs: [ 'main' ],
+		inputs: ['main'],
+		outputs: ['main'],
 		credentials: [
 			{
 				name: 'labsMobileApi',
@@ -99,7 +99,7 @@ export class LabsMobile implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						operation: ['send','scheduled'],
+						operation: ['send', 'scheduled'],
 						resource: ['sms'],
 					},
 				},
@@ -115,7 +115,7 @@ export class LabsMobile implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						operation: ['send','scheduled'],
+						operation: ['send', 'scheduled'],
 						resource: ['sms'],
 					},
 				},
@@ -132,7 +132,7 @@ export class LabsMobile implements INodeType {
 				},
 				displayOptions: {
 					show: {
-						operation: ['send','scheduled'],
+						operation: ['send', 'scheduled'],
 						resource: ['sms'],
 					},
 				},
@@ -160,13 +160,14 @@ export class LabsMobile implements INodeType {
 					const sender = this.getNodeParameter('sender', i) as string;
 
 					const data: IDataObject = {
+						"log": "7",
 						"message": `${message}`,
-							"tpoa": `${sender}`,
-								"recipient": [
-									{
-										"msisdn": `${to}`,
-									},
-							 ],
+						"tpoa": `${sender}`,
+						"recipient": [
+							{
+								"msisdn": `${to}`,
+							},
+						],
 					};
 					Object.assign(data);
 					const options: IRequestOptions = {
@@ -174,7 +175,7 @@ export class LabsMobile implements INodeType {
 						uri: `https://api.labsmobile.com/json/send`,
 						headers: {
 							'Content-Type': 'application/json',
-							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.token}`).toString('base64'),
+							Authorization: 'Basic ' + Buffer.from(`${credentials.username}` + ':' + `${credentials.token}`).toString('base64'),
 							'Cache-Control': 'no-cache',
 						},
 						body: data,
@@ -190,20 +191,21 @@ export class LabsMobile implements INodeType {
 					const message = this.getNodeParameter('message', i) as string;
 					const sender = this.getNodeParameter('sender', i) as string;
 
-					const dateCanedaF = date.slice(0,-14);
-					const dateCadenaH = date.slice(11,-5);
+					const dateCanedaF = date.slice(0, -14);
+					const dateCadenaH = date.slice(11, -5);
 
 					const dateCadenaResult = dateCanedaF + " " + dateCadenaH;
 
 					const data: IDataObject = {
+						"log": "7",
 						"message": `${message}`,
-							"tpoa": `${sender}`,
-								"recipient": [
-									{
-										"msisdn": `${to}`,
-									},
-							 ],
-							"scheduled":`${dateCadenaResult}`,
+						"tpoa": `${sender}`,
+						"recipient": [
+							{
+								"msisdn": `${to}`,
+							},
+						],
+						"scheduled": `${dateCadenaResult}`,
 					};
 					Object.assign(data);
 					const options: IRequestOptions = {
@@ -211,7 +213,7 @@ export class LabsMobile implements INodeType {
 						uri: `https://api.labsmobile.com/json/send`,
 						headers: {
 							'Content-Type': 'application/json',
-							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.token}`).toString('base64'),
+							Authorization: 'Basic ' + Buffer.from(`${credentials.username}` + ':' + `${credentials.token}`).toString('base64'),
 							'Cache-Control': 'no-cache',
 						},
 						body: data,
@@ -231,7 +233,7 @@ export class LabsMobile implements INodeType {
 						uri: `https://api.labsmobile.com/json/balance`,
 						headers: {
 							'Content-Type': 'application/json',
-							 Authorization: 'Basic ' + Buffer.from(`${credentials.username}`+':'+`${credentials.token}`).toString('base64'),
+							Authorization: 'Basic ' + Buffer.from(`${credentials.username}` + ':' + `${credentials.token}`).toString('base64'),
 							'Cache-Control': 'no-cache',
 						},
 						body: data,

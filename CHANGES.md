@@ -4,6 +4,19 @@ This file contains the version history and relevant changes for this project.
 
 The project uses the `MAJOR.MINOR.PATCH` versioning scheme.
 
+## [2.0.3] - 2026-10-27
+
+**Type:** PATCH
+
+### Changes
+
+- Update js-yaml to 4.3.2 and brace-expansion to 5.0.12 in the dependency lockfile.
+- Include the log parameter in immediate and scheduled SMS requests.
+- Point npm repository and homepage links to labsmobile/sms-n8n.
+- Add a command to push the current commit to both GitHub repositories.
+- Run the publication-specific ESLint checks explicitly before publishing.
+
+
 ## [2.0.2] - 2026-08-13
 
 **Type:** MINOR
